@@ -641,4 +641,10 @@ leveldb_logger_t* leveldb_logger_create(leveldb_log_string_fn logger)
 	return result;
 }
 
+void leveldb_logger_destroy(leveldb_logger_t* logger)
+{
+	delete logger->rep;
+	delete logger;
+}
+
 }  // end extern "C"

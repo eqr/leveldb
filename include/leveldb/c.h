@@ -47,7 +47,6 @@ extern "C" {
 #include <stdarg.h>
 #include <stddef.h>
 #include <stdint.h>
-#include <extensions.cc>
 
 #ifdef _WIN32
 #ifdef DllExport
@@ -212,7 +211,7 @@ extern DllExport void leveldb_options_set_cache(leveldb_options_t*, leveldb_cach
 extern DllExport void leveldb_options_set_block_size(leveldb_options_t*, size_t);
 extern DllExport void leveldb_options_set_block_restart_interval(leveldb_options_t*, int);
 extern DllExport leveldb_logger_t* leveldb_logger_create(leveldb_log_string_fn logger);
-
+extern DllExport void leveldb_logger_destroy(leveldb_logger_t* logger);
 enum {
   leveldb_no_compression = 0,
   leveldb_snappy_compression = 1
